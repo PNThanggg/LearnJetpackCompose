@@ -14,7 +14,7 @@ androidx-palette = "1.0.0"
 ksp = "1.8.10-1.0.9"
 androidx-constraintlayout = "1.0.1"
 # Hilt
-hilt = "2.45"
+hilt = "2.47"
 #hiltExt = "1.0.0"
 androidxHiltNavigationCompose = "1.0.0"
 
@@ -98,6 +98,8 @@ androidx-compose-runtime-livedata = { group = "androidx.compose.runtime", name =
 #androidx-compose-ui-tooling-core = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
+
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintLayout" }
 androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "androidx-constraintlayout" }
 
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }

@@ -24,7 +24,7 @@ sealed class Screen(val route: String) {
     }
 }
 
-@Composable
+@Composablet
 fun rememberCasterAppState(
     navController: NavHostController = rememberNavController(),
     context: Context = LocalContext.current
