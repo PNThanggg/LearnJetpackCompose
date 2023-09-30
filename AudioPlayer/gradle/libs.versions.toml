@@ -1,11 +1,10 @@
 [versions]
 agp = "8.2.0-alpha13"
 kotlin = "1.8.10"
-core-ktx = "1.10.1"
+core-ktx = "1.12.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
-lifecycle-runtime-ktx = "2.6.1"
 activity-compose = "1.7.2"
 compose-bom = "2023.08.00"
 
@@ -17,7 +16,8 @@ hiltNavigationCompose = "1.0.0"
 #ksp = "1.8.10-1.0.9"
 
 # lifecycle
-androidxLifecycle = "2.6.1"
+lifecycle-runtime-ktx = "2.6.2"
+androidxLifecycle = "2.6.2"
 
 kotlinx_immutable = "0.3.5"
 coroutines = "1.7.3"
@@ -39,17 +39,18 @@ ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
 
 androidx-compose-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
-androidx-core = { group = "androidx.core", name = "core", version = "1.10.1" }
+androidx-core = { group = "androidx.core", name = "core", version = "1.12.0" }
 androidx-media = { group = "androidx.media", name = "media", version = "1.6.0" }
+
 exoplayer = { group = "com.google.android.exoplayer", name = "exoplayer", version = "2.19.1" }
-extension-mediasession = { group = "com.google.android.exoplayer", name = "extension-mediasessionf", version = "2.19.1" }
+extension-mediasession = { group = "com.google.android.exoplayer", name = "extension-mediasession", version = "2.19.1" }
+
 
 # Hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
-#hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
-#hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+hilt-lifecycle-viewmodel = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version = "1.0.0" }
 
 # lifecycle
 androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "androidxLifecycle" }

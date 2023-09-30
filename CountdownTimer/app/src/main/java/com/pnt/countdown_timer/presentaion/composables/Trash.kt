@@ -1,0 +1,79 @@
+package com.pnt.countdown_timer.presentaion.composables
+
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material3.Icon
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Rect
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.boundsInRoot
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.unit.dp
+import com.pnt.countdown_timer.common.TIMER_SIZE_PX
+import com.pnt.countdown_timer.common.TRASH_SIZE_DP
+import com.pnt.countdown_timer.service.OverlayState
+
+@Composable
+fun Trash(overlayState: OverlayState) {
+    var trashRect by remember { mutableStateOf(Rect.Zero) }
+    val isTimerDragHoveringTrash = remember {
+        derivedStateOf {
+            calcTimerIsHoverTrash(overlayState, trashRect)
+        }
+    }
+    val iconTint by remember {
+        derivedStateOf {
+            if (isTimerDragHoveringTrash.value) {
+                Color.Red
+            } else {
+                Color.Black
+            }
+        }
+    }
+
+    Box(
+        Modifier
+            .size(TRASH_SIZE_DP.dp)
+            .clip(CircleShape)
+            .background(Color.White.copy(alpha = .5f))
+            .onGloballyPositioned {
+                trashRect = it.boundsInRoot()
+            }, contentAlignment = Alignment.Center
+    ) {
+        Icon(
+            Icons.Filled.Delete, "trash", modifier = Modifier.size(50.dp), tint = iconTint
+        )
+    }
+
+// this is wack, but if it works...
+    LaunchedEffect(isTimerDragHoveringTrash) {
+        snapshotFlow {
+            isTimerDragHoveringTrash.value
+        }.collect {
+            overlayState.isTimerHoverTrash = it
+        }
+    }
+}
+
+fun calcTimerIsHoverTrash(
+    overlayState: OverlayState, trashRect: Rect
+): Boolean {
+    val halfTimerSize = TIMER_SIZE_PX.toFloat() / 2f
+    val timerCenterX = overlayState.timerOffset.x + halfTimerSize
+    val timerCenterY = overlayState.timerOffset.y + halfTimerSize
+    return !(timerCenterX < trashRect.left || timerCenterX > trashRect.right || timerCenterY < trashRect.top || timerCenterY > trashRect.bottom)
+}

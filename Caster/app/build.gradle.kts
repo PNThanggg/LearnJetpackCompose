@@ -125,6 +125,8 @@ dependencies {
     implementation(libs.rometools.rome)
     implementation(libs.rometools.modules)
 
+    implementation(libs.play.services.ads)
+
     // room
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)

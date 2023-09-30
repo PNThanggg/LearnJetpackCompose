@@ -45,6 +45,7 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -84,6 +85,15 @@ fun Home(
     viewModel: HomeViewModel = viewModel()
 ) {
     val viewState by viewModel.state.collectAsStateWithLifecycle()
+
+//    LaunchedEffect(Unit) {
+//
+//    }
+
+//    DisposableEffect(Unit) {
+//
+//    }
+
     Surface(Modifier.fillMaxSize()) {
         HomeContent(
             featuredPodcasts = viewState.featuredPodcasts,

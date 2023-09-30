@@ -1,11 +1,11 @@
 [versions]
-agp = "8.2.0-alpha13"
+agp = "8.2.0-beta04"
 kotlin = "1.8.10"
-core-ktx = "1.10.1"
+core-ktx = "1.12.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
-lifecycle-runtime-ktx = "2.6.1"
+lifecycle-runtime-ktx = "2.6.2"
 activity-compose = "1.7.2"
 compose-bom = "2023.08.00"
 
@@ -19,12 +19,12 @@ hilt = "2.47"
 androidxHiltNavigationCompose = "1.0.0"
 
 # lifecycle
-androidxLifecycle = "2.6.1"
+androidxLifecycle = "2.6.2"
 
 # Jetpack compose
 androidxActivity = "1.7.2"
 androidxComposeBom = "2023.08.00"
-androidxComposeCompiler = "1.5.1"
+androidxComposeCompiler = "1.5.3"
 #androidxCompose = "1.2.0"
 #androidxComposeRuntimeTracing = "1.0.0-alpha03"
 
@@ -37,7 +37,7 @@ room = "2.5.2"
 coil = "2.3.0"
 
 androidx-window = "1.2.0-beta01"
-okhttp = "4.10.0"
+okhttp = "4.11.0"
 
 rome = "1.18.0"
 
@@ -99,7 +99,7 @@ androidx-compose-runtime-livedata = { group = "androidx.compose.runtime", name =
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 
-androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintLayout" }
+#androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintLayout" }
 androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "androidx-constraintlayout" }
 
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
@@ -126,6 +126,8 @@ accompanist-appcompat-theme = { group = "com.google.accompanist", name = "accomp
 accompanist-swiperefresh = { group = "com.google.accompanist", name = "accompanist-swiperefresh", version.ref = "accompanist" }
 #accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist" }
 #accompanist-testharness = { group = "com.google.accompanist", name = "accompanist-testharness", version.ref = "accompanist" }
+
+play-services-ads = { group = "com.google.android.gms", name = "play-services-ads", version = "22.3.0" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
